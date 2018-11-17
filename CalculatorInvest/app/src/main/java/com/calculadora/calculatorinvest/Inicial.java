@@ -7,11 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class Inicial extends AppCompatActivity {
 
-    TextInputEditText montante, juros, inflacao, ano;
+    EditText montante, juros, ano;
     Button calcular;
 
     @Override
@@ -22,7 +23,6 @@ public class Inicial extends AppCompatActivity {
 
         montante = findViewById(R.id.montante);
         juros = findViewById(R.id.juros);
-        inflacao = findViewById(R.id.inflacao);
         ano = findViewById(R.id.ano);
 
         calcular = findViewById(R.id.calcular);
@@ -35,7 +35,6 @@ public class Inicial extends AppCompatActivity {
 
                 Double montantes = Double.parseDouble(montante.getText().toString());
                 Double juro = Double.parseDouble(juros.getText().toString());
-                //Double infla = Double.parseDouble(inflacao.getTag().toString());
                 Double valorDeImpostos = 0.00;
 
 
@@ -45,16 +44,16 @@ public class Inicial extends AppCompatActivity {
                             Double anos = Double.parseDouble(ano.getText().toString());
 
 
-                            for(int i = 0;i<= anos ; i++){
+                            for(int i = 0;i< anos ; i++){
 
                                 Double resultado = montante * juros;
                                montante = montante + resultado;
                             }
                             if(anos == 1 ){
                                 valorDeImpostos = montante * 0.20;
-                            }else if(anos >= 2){
+                            }else if(anos > 2){
                                 valorDeImpostos = montante * 0.175;
-                            }else if(anos >= 5 ){
+                            }else if(anos > 5 ){
                                 valorDeImpostos = montante * 0.15;
                             }
 

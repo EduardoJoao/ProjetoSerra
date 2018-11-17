@@ -36,8 +36,8 @@ public class Resultado extends AppCompatActivity {
             DecimalFormat decimal = new DecimalFormat("0.00");
             String resultado = decimal.format(montantes);
             String resultadoImposto =  decimal.format(valorDeImposto);
-            valorTotal.setText("R$ "+resultado);
-            valorImposto.setText("R$ "+resultadoImposto);
+            valorTotal.setText("Valor de Investido: R$ "+resultado);
+            valorImposto.setText("Valor de Retorno: R$ "+resultadoImposto);
         }
 
         MobileAds.initialize(this, "ca-app-pub-4251802455999210/2592967698");
